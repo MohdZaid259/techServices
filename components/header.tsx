@@ -33,11 +33,12 @@ export default function Header() {
       href: "#services",
       dropdown: true,
       items: [
-        { name: "Civil Contracting", href: "#civil-contracting" },
-        { name: "Heavy Equipment", href: "#heavy-equipment" },
-        { name: "Birds & Pest Control", href: "#pest-control" },
-        { name: "Marble Supply", href: "#marble-supply" },
-        { name: "Civil & Carpentry", href: "#carpentry" },
+        { name: "Civil Contracting", href: "/services/Civil%20Contracting" },
+        { name: "Heavy Equipment", href: "/services/Heavy%20Equipment" },
+        { name: "Birds & Pest Control", href: "/services/Birds%20%26%20Pest%20Control" },
+        { name: "Marble Supply", href: "/services/Marble%20Supply" },
+        { name: "Civil & Carpentry", href: "/services/Civil%20%26%20Carpentry" },
+        { name: "Securiy Management", href: "/services/Security%20Management" },
       ],
     },
     { name: "About", href: "/about" },
@@ -52,8 +53,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between ml-4 sm:ml-0 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-navy-blue">AL</span>
-            <span className="text-xl font-bold text-gold">HAYA</span>
+            <span className="text-xl font-bold text-navy-blue">RUKN AL HAYA</span>
           </Link>
         </div>
 
@@ -135,6 +135,10 @@ export default function Header() {
                 <div className="flex items-center gap-2">
                   <Phone className="h-4 w-4 text-gold" />
                   <span className="text-sm font-medium">+971 50 123 4567</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-gold" />
+                  <span className="text-sm font-medium">+971 55 440 7515</span>
                 </div>
                 <Button onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=info@alhaya.tech`)} className="bg-gold hover:bg-gold/90 text-white font-semibold">Order Now</Button>
               </div>

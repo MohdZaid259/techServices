@@ -82,11 +82,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#testimonials" className="hover:text-gold">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
                 <Link href="#contact" className="hover:text-gold">
                   Contact Us
                 </Link>
@@ -98,11 +93,12 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
-                <span>Office #1234, Al Barsha Tower, Dubai, UAE</span>
+                <span>Office no. 101 B6, Naseer Ahmad Saeed Tower, Al Garhoud, Dubai, UAE</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 flex-shrink-0 text-gold" />
                 <span>+971 52 709 3747</span>
+                <span>+971 55 440 7515</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 flex-shrink-0 text-gold" />
