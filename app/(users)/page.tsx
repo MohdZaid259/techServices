@@ -26,6 +26,7 @@ export default function Home() {
           backgroundImage: "url('/utils/building1.jpg')",
           backgroundColor: "rgba(0, 0, 0, 0.6)",
           backgroundBlendMode: "overlay",
+          
         }}/>
         <div className="container relative mx-auto px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
@@ -41,7 +42,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-16 left-1/2 md:block hidden transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center text-white/80">
             <span className="text-sm mb-2">Scroll Down</span>
             <svg
@@ -187,20 +188,19 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative mx-[52px]">
+          <div className="relative mx-[20px] md:mx-[52px]">
             <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-navy-blue to-transparent"></div>
             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-navy-blue to-transparent"></div>
 
             <div className="client-marquee overflow-hidden">
-              <div className="flex animate-marquee space-x-16">
-                {[...clients, ...clients].map((client, index) => (
+              <div className="flex animate-marquee space-x-0 md:space-x-16" style={{ animationDuration: '10s' }}>
+                {[...clients, ...clients, ...clients].map((client, index) => (
                   <div key={index} className="flex h-32 w-40 flex-col gap-5 flex-shrink-0 items-center justify-center">
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={client.name}
                       width={160}
                       height={80}
-                      
                       priority={false}
                       className={`max-h-16 w-auto object-contain ${client.name=='St. Regis Hotels'?'invert':''}`}
                     />
@@ -260,7 +260,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24">
-        <div className="container mx-auto px-0 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-2 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Contact Us</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">

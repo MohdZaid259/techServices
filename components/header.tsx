@@ -49,7 +49,7 @@ export default function Header() {
     <header className={`sticky top-0 z-50 w-full transition-all duration-0 ${
         scrolled ? "bg-white" : "bg-white"
       }`}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-16 items-center justify-between ml-4 sm:ml-0 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <span className="text-xl font-bold text-navy-blue">AL</span>
@@ -63,7 +63,7 @@ export default function Header() {
             <div key={item.name} className="relative group">
               <Link
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-navy-blue after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-navy-blue after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.name}
               </Link>
@@ -74,7 +74,7 @@ export default function Header() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-sm text-muted-foreground hover:bg-slate-50 hover:text-navy-blue"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-slate-50 hover:text-navy-blue"
                       >
                         {subItem.name}
                       </Link>
@@ -97,10 +97,10 @@ export default function Header() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="h-9 w-9 p-0">
-              <Menu className="h-6 w-6" />
+            <div className="scale-75 mr-6">
+              <Menu className="h-10 w-10 opacity-90" />
               <span className="sr-only">Toggle menu</span>
-            </Button>
+            </div>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <div className="flex flex-col space-y-6 pt-6">
@@ -109,7 +109,7 @@ export default function Header() {
                   <div key={item.name} className="space-y-2">
                     <Link
                       href={item.href}
-                      className="text-base font-medium text-muted-foreground transition-colors hover:text-navy-blue"
+                      className="text-base font-medium text-gray-600 transition-colors hover:text-navy-blue"
                       onClick={() => !item.dropdown && setIsOpen(false)}
                     >
                       {item.name}
@@ -120,7 +120,7 @@ export default function Header() {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="block text-sm text-muted-foreground hover:text-navy-blue"
+                            className="block text-sm text-gray-800 hover:text-navy-blue"
                             onClick={() => setIsOpen(false)}
                           >
                             {subItem.name}
@@ -136,7 +136,7 @@ export default function Header() {
                   <Phone className="h-4 w-4 text-gold" />
                   <span className="text-sm font-medium">+971 50 123 4567</span>
                 </div>
-                <Button className="bg-gold hover:bg-gold/90 text-navy-blue">Get a Quote</Button>
+                <Button onClick={() => window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=info@alhaya.tech`)} className="bg-gold hover:bg-gold/90 text-white font-semibold">Order Now</Button>
               </div>
             </div>
           </SheetContent>
