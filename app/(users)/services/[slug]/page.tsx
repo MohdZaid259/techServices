@@ -67,6 +67,8 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                   src={service.gallery[0].image || "/placeholder.svg"}
                   alt={service.gallery[0].caption}
                   fill
+                  
+                  priority={false}
                   className="object-cover"
                 />
               </div>
@@ -94,6 +96,8 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
                       src={item.image || "/placeholder.svg"}
                       alt={item.caption}
                       fill
+                      
+                      priority={false}
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

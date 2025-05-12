@@ -4,11 +4,11 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
-import { FirebaseProvider } from '@/context/Firebase'
 const inter = Inter({ subsets: ["latin"] })
+import PageWrapper from "@/components/Wrapper"
 
 export const metadata: Metadata = {
-  title: "Dubai Technical Services - Your One-Stop Technical Service Provider",
+  title: "Al-Haya Techincal Services",
   description:
     "Professional civil contracting, heavy equipment, pest control, marble supply, and carpentry services in Dubai, UAE.",
     generator: 'v0.dev'
@@ -20,15 +20,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth light" style={{colorScheme: "light"}}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <FirebaseProvider>
-          <div className="flex min-h-screen flex-col ">
-            {children}
-          </div>
+          <PageWrapper>{children}</PageWrapper>
           <Toaster />
-          </FirebaseProvider>
         </ThemeProvider>
       </body>
     </html>

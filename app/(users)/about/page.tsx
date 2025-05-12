@@ -1,6 +1,7 @@
 import Image from "next/image"
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button"
-import ScrollAnimation from "@/components/scroll-animation"
+const ScrollAnimation = dynamic(() => import('@/components/scroll-animation'));
 import { values, team } from '@/components/textualData.js'
 import company from '@/public/founder/company.webp'
 
@@ -58,6 +59,8 @@ export default function AboutPage() {
                   src={company.src}
                   alt="Company History"
                   fill
+                  
+                  priority={false}
                   className="object-cover"
                 />
               </div>
@@ -145,9 +148,9 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-8 sm:grid-cols-2 ">
             {team.map((member, index) => (
-              <div key={index} className="overflow-hidden bg-white shadow-sm">
-                <div className="aspect-square relative">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-contain scale-100 rounded-xl " />
+              <div key={index} className="overflow-hidden bg-white shadow-lg">
+                <div className="aspect-square h-72 relative">
+                  <Image src={member.image || "/placeholder.svg"} alt={member.name}  priority={false} fill className=" object-contain" />
                 </div>
                 <div className="p-6">
                   <h3 className="mb-1 text-xl font-semibold text-navy-blue">{member.name}</h3>

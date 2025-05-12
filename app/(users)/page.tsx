@@ -1,10 +1,11 @@
 import Image from "next/image"
+import dynamic from 'next/dynamic';
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import ServiceCard from "@/components/service-card"
-import ProjectGallery from "@/components/project-gallery"
-import ScrollAnimation from "@/components/scroll-animation"
+const ServiceCard = dynamic(() => import('@/components/service-card'));
+const ProjectGallery = dynamic(() => import('@/components/project-gallery'));
+const ScrollAnimation = dynamic(() => import('@/components/scroll-animation'));
 import { initialServices as services, initialClients as clients, initialFaqs as faqs } from '@/components/textualData.js'
 import reliability from '@/public/icons/reliability.png'
 import safety from '@/public/icons/safety.png'
@@ -13,6 +14,7 @@ import professional from '@/public/icons/professional.png'
 import timer from '@/public/icons/timer.png'
 import customer from '@/public/icons/customer.png'
 import Form from '@/components/ContactForm'
+import Link from "next/link"
 
 export default function Home() {
 
@@ -20,7 +22,7 @@ export default function Home() {
     <main className="flex-1">
       {/* Hero Section */}
       <section className="relative text-white h-screen flex items-center">
-        <div className="absolute inset-0 bg-contain bg-no-repeat bg-center" style={{
+        <div className="absolute inset-0 bg-cover bg-no-repeat bg-center" style={{
           backgroundImage: "url('/utils/building1.jpg')",
           backgroundColor: "rgba(0, 0, 0, 0.6)",
           backgroundBlendMode: "overlay",
@@ -35,7 +37,7 @@ export default function Home() {
               services.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-gold hover:bg-gold/90 text-black">Explore Services</Button>
+              <Link href='#services'><Button className="bg-gold hover:bg-gold/90 text-black">Explore Services</Button></Link>
             </div>
           </div>
         </div>
@@ -61,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 md:py-24">
+      <section id="services" className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
@@ -198,6 +200,8 @@ export default function Home() {
                       alt={client.name}
                       width={160}
                       height={80}
+                      
+                      priority={false}
                       className={`max-h-16 w-auto object-contain ${client.name=='St. Regis Hotels'?'invert':''}`}
                     />
                     <span className="text-gray-400">{client.name}</span>
@@ -210,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* Project Gallery */}
-      <section className="py-16 md:py-24">
+      <section id="projects" className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <ScrollAnimation animation="fade-in-up">
@@ -255,21 +259,21 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-16 md:py-24">
+        <div className="container mx-auto px-0 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-navy-blue sm:text-4xl">Contact Us</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Get in touch with our team for inquiries, quotations, or to discuss your project needs.
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl bg-white p-8 shadow-sm">
+          <div className="grid gap-8 grid-cols-1 lg:grid-cols-2">
+            <div className="rounded-xl bg-white p-2 shadow-sm">
               <h3 className="mb-6 text-2xl font-semibold text-navy-blue">Get a Quotation</h3>
               <Form/>
             </div>
             <div className="space-y-8">
-              <div className="rounded-xl bg-white p-8 shadow-sm">
+              <div className="rounded-xl bg-white p-2 shadow-sm">
                 <h3 className="mb-6 text-2xl font-semibold text-navy-blue">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">

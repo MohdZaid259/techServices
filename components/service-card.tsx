@@ -37,13 +37,15 @@ export default function ServiceCard({ service }: ServiceCardProps) {
 
   return (
     <Card onClick={()=>router.push(`/services/${service.title}`)} className={`overflow-hidden transition-all border-b-4 
-    ${serviceStyles[service.title]?.border || 'border-b-gray-300'} hover:shadow-xl`}>
+    ${serviceStyles[service.title]?.border || 'border-b-pink-400'} hover:shadow-xl`}>
       <CardContent className="p-6">
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gold/10">
           <Image
             src={service.icon || "/placeholder.svg"}
             alt={service.title}
             width={40}
+            
+            priority={false}
             height={40}
             className="h-8 w-8"
           />
