@@ -467,19 +467,19 @@ export const servicesData = {
     gallery: [
       {
         image: pest2,
-        caption: "Bird Deterrent System Installation on Commercial Building",
+        caption: "Eco-Friendly Pest Control in Home Garden",
       },
       {
         image: birds,
-        caption: "Pest Inspection at Residential Property",
+        caption: "Anti-Bird Netting Installed on Residential Balcony",
       },
       {
         image: pest3,
-        caption: "Termite Control Treatment in Progress",
+        caption: "Indoor Cockroach and Ant Treatment",
       },
       {
         image: pest4,
-        caption: "Mosquito Control System for Outdoor Areas",
+        caption: "Rodent Control System for Outdoor Areas",
       },
     ],
   },
@@ -587,19 +587,19 @@ export const servicesData = {
     gallery: [
       {
         image: cctv1,
-        caption: "Custom Wooden Cabinet Installation",
+        caption: "CCTV Camera Installation in Commercial Building",
       },
       {
         image: cctv2,
-        caption: "Wooden Flooring in Residential Apartment",
+        caption: "Surveillance System Setup in Residential Area",
       },
       {
         image: cctv3,
-        caption: "Custom Built-in Wardrobe Design",
+        caption: "Access Control System Integration",
       },
       {
         image: cctv4,
-        caption: "Wooden Pergola Construction for Villa",
+        caption: "24/7 Monitoring Room Setup",
       },
     ],
   },

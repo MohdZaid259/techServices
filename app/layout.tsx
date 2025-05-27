@@ -9,6 +9,9 @@ import PageWrapper from "@/components/Wrapper"
 
 export const metadata: Metadata = {
   title: "Al-Haya Techincal Services",
+  icons: {
+    icon: "/utils/logo.png",
+  },
   description:
     "Professional civil contracting, heavy equipment, pest control, marble supply, and carpentry services in Dubai, UAE.",
     generator: 'v0.dev'
