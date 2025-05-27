@@ -9,22 +9,6 @@ import call from '@/public/icons/call.png'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -47,9 +31,7 @@ export default function Header() {
   ]
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-0 ${
-        scrolled ? "bg-white" : "bg-white"
-      }`}>
+    <header className={`sticky top-0 z-50 w-full transition-all duration-0  bg-white`}>
       <div className="container mx-auto flex h-16 items-center justify-between ml-4 sm:ml-0 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">

@@ -158,3 +158,13 @@
 .delay-500 {
   transition-delay: 500ms;
 }
+
+.bg-position-mobile {
+  background-position: 70% 0%;
+}
+
+@media (min-width: 524px) {
+  .bg-position-mobile {
+    background-position: center;
+  }
+}
