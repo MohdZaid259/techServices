@@ -431,7 +431,7 @@ export const servicesData = {
       },
       {
         image: fork,
-        caption: "Crane Operations at Construction Site",
+        caption: "Electric Forklift for Safe and Efficient Warehouse Operations",
       },
       {
         image: heavy1,
