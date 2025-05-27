@@ -25,8 +25,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative text-white h-screen flex items-center">
         <div className="absolute inset-0 bg-cover bg-no-repeat bg-position-mobile" style={{
-          backgroundImage: "url('/utils/building1.jpg')",
-          // backgroundImage: "url('/utils/hero.webp')",
+          // backgroundImage: "url('/utils/building1.jpg')",
+          backgroundImage: "url('/utils/hero.webp')",
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           backgroundBlendMode: "overlay",
         }}/>
